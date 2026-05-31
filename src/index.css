@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Dynamic fade-in with slide up */
+  @keyframes cyberFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Glow pulse */
+  @keyframes indicatorGlow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.8), 0 0 30px rgba(6, 182, 212, 0.3);
+    }
+  }
+
+  /* Digital scanline animation for loading */
+  @keyframes scanline {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  .animate-cyber-in {
+    animation: cyberFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .glow-cyan-pulse {
+    animation: indicatorGlow 2.5s infinite ease-in-out;
+  }
+
+  /* Custom styled slim scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(6, 182, 212, 0.4);
+  }
+}
+
+/* Beautiful dark base background over body */
+html, body {
+  background-color: #030508;
+  color: #f1f5f9;
+  min-height: 100vh;
+}
